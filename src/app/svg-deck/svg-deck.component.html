@@ -1,0 +1,39 @@
+<div class='container jumbotron shadow-lg' id="dropdown">
+  <div class="row justify-content-center mt-2">
+      <button class='btn btn-primary m-1' (click)='getCard()'>Get Card</button>
+      <button class='btn btn-warning m-1' (click)='toggleBack()'>Toggle Back Type</button>
+      <button class='btn btn-warning m-1' (click)='toggleFace()'>Toggle Back/Face</button>
+      
+      <button class='btn btn-danger m-1' (click)='resetCards()'>Reset Deck</button>
+
+    <div class="input-group input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text backfill"> Back Fill </span>
+      </div>
+      <input type="text" class="form-control" type="text" [(ngModel)]='fill' />
+    </div>
+
+    <div class="input-group input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text text-center cardscale"> Card Scale </span>
+      </div>
+      <input type="text" class="form-control" step=".125" type="number" [(ngModel)]='scale' />
+    </div>
+
+    <div class="input-group input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-warning decksize" type="button" (click)='setSize()'>
+          <h3>Deck Size</h3>
+        </button>
+      </div>
+      <input type="text" class="form-control" step="5" max="500" onwheel type="number" [(ngModel)]='deckSize' />
+    </div>
+
+
+  </div>
+
+</div>
+<div class="row">
+
+  <svg-card *ngFor='let card of deck' class='col m-2' [scale]='scale' [card]='card' [fill]='fill' [state]='state' [back]='back'></svg-card>
+</div>

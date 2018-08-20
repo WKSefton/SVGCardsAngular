@@ -1,0 +1,14 @@
+<div style='display:inline-block;' class='m-1 rounded' [attr.height]="height" [attr.width]="width">
+    <div class='svgcard' (click)='toggleState()' [@flipState]='state'>
+        <div class='back shadow-lg rounded-circle'>
+            <svg [attr.height]="height" [attr.width]="width" viewBox="0 0 169.075 244.640">
+                <use [attr.href]="'assets/svg-cards-indented.svg#' + back" [attr.fill]='fill' />
+            </svg>
+        </div>
+        <div class='face shadow-lg rounded-circle'>
+            <svg [attr.height]="height" [attr.width]="width" viewBox="0 0 169.075 244.640">
+                <use [attr.href]="'assets/svg-cards-indented.svg#' + card" />
+            </svg>
+        </div>
+    </div>
+</div>
